@@ -1,13 +1,14 @@
 
 import './App.css'
 import Form from './components/Form'
+import { Route,Routes } from 'react-router-dom'
 function App() {
 
   return (
     <>
-      <div className='h-screen w-screen flex justify-center items-center'>
-        <Form></Form>
-      </div>
+      <Routes>
+        <Route path='/' element={<Form/>} />
+      </Routes>
     </>
   )
 }

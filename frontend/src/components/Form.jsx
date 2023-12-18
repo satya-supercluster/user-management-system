@@ -1,31 +1,16 @@
 import React from 'react'
-const handleSubmit=(e)=>{
-    e.preventDefault();
-
-}
+import Login from './forms/Login';
+import { useState } from 'react';
+import Register from './forms/Register';
 const Form = () => {
+  const [formType,setFormType]=useState(false);
   return (
     <>
-      <form className=" w-1/2 px-5 py-2 border-2 rounded-2xl border-blue-500" action="handleSubmit">
-        <div className='flex justify-center py-2'><h1 className=' text-2xl text-purple-700 '>Login</h1></div>
-        <div className='flex flex-col flex-wrap '>
-            <label className=''>Name</label>
-            <input type="text" name="name" placeholder='eg. Satyam Gupta'/>
-        </div>
-        <div>
-            <label>Email</label>
-            <input type="email" name="email" placeholder='eg. abc@gmail.com'/>
-        </div>
-        <div>
-            <label>Password</label>
-            <input type="password" name="password" placeholder="Enter your password"/>
-        </div>
-        <div>
-            <label>Confirm Password</label>
-            <input type="password" name="confirmPassword" placeholder="Re-enter your password"/>
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      <div className='h-screen w-screen flex justify-center items-center bg-slate-700'>
+        <form className="  md:w-1/2 lg:w-1/3 xl:w-1/4 px-5 py-2 border-4 rounded-lg border-yellow-500 bg-stone-600">
+          {((formType)===true)?<Register set={setFormType}/>:<Login set={setFormType}/>}
+        </form>
+      </div>
     </>
   )
 }

@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt =require('jsonwebtoken');
 router.post('/register',async (req,res)=>{
     const {name,email,password}=req.body;
+    console.log(req.body);
     if(name&&email&&password){
         const user = await users.findOne({email:email});
         if(!user){

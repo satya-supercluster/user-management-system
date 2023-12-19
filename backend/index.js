@@ -1,6 +1,10 @@
 const express =require('express');
 const app=express();
 
+//Cors
+const cors=require('cors');
+app.use(cors());
+
 // CONNECTING TO MONGOOSE ATLAS
 require('dotenv').config();
 require('./db/connection.js')
